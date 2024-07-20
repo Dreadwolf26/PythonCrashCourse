@@ -42,4 +42,40 @@ cubesList = [i**3 for i in range(1,11)]
 for cubes in cubesList:
     print(cubes)
 
-#continue on page 65
+#4-10 try it yourself
+guests = ['Ronnie Radke', 'Henry Rollins', 'Jelly Roll', 'Royle McCoy']
+
+print("The first three items in the list are: " + ",".join(guests[:3]))
+
+print("The middle items in the list are: " + ",".join(guests[1:3]))
+
+print("The last three items in the list are: " + ",".join(guests[-3:]))
+
+
+#4-11
+
+friendsPizzas = pizzas[:]
+
+pizzas.append("Loaded Potato")
+
+friendsPizzas.append("Pineapple (Gross)")
+
+myPizzas = [pizza for pizza in pizzas]
+print("My favorite pizas are: ", ",".join(myPizzas))
+
+friendszzzaaaa = [pizza for pizza in friendsPizzas]
+print("My friends favorite pizzas are: ", ",".join(friendszzzaaaa))
+
+#4-13
+buffetFoods = ("pizza", "chicken tenders", "ribeye", "key lime pie", "french fries")
+print("\nOld Menu: ")
+for buffet in buffetFoods:
+    print(buffet)
+
+#This rejects due to tuples cannot be modified
+#buffetFoods.append("General Tso Chicken")
+
+buffetFoods = ("Mac and cheese", "wings", "ribeye", "key lime pie", "french fries")
+print("\nNew menu: ")
+for buffet in buffetFoods:
+    print(buffet)
