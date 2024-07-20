@@ -1,0 +1,62 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Python
+*.pyc
+__pycache__/
+env/
+venv/
+ENV/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# JavaScript
+*.log
+*.env
+*.bundle.js
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# macOS
+*.DS_Store
+
+# Windows
+*.log
+*.swp
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+/dist
+/build
+/out
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Test output
+/coverage
