@@ -102,7 +102,7 @@ if alien_color == "green":
 else:
     print("You did not get an alient better luck next time.")
 
-#if-elif-else chain 
+#if-elif-else chain aliens
 
 if alien_color == "red":
     print("You've earned 15 points")
@@ -111,4 +111,72 @@ elif alien_color == "yellow":
 elif alien_color == "green":
     print("You've earned 99 points")
 
-    #Continue on page 89 exercise 5-6
+#if-elif-else chain stage of life 
+
+age = 32
+
+if age < 2:
+    print("You are a baby")
+elif age >= 2 and age < 4:
+    print("You are a toddler")
+elif age >= 4 and age < 13:
+    print("You are a kid")
+elif age >= 13 and age < 20:
+    print("You are a teenager")
+elif age >= 20 and age < 65:
+    print("You are an adult")
+else:
+    print("You are an elder")
+
+
+favorite_fruits = ["Pineapple", "Watermelon", "Cantaloupe"]
+
+if "Pineapple" in favorite_fruits:
+    print("You really like Pineapple")
+else:
+    print("Fruit is not found in the list")
+
+if "Watermelon" in favorite_fruits:
+    print("You really like Watermelon")
+else:
+    print("Fruit is not found in the list")
+
+if "Cantaloupe" in favorite_fruits:
+    print("You really like Cantaloupe")
+else:
+    print("Fruit is not found in the list")
+
+#5-8 
+usernames = ["dreadwolf26", "admin", "chris", "malachi", "james"]
+
+if usernames:
+    for username in usernames:
+        if username == "admin":
+            print("Hello, " + username + " would you like to see a status report")
+        else:
+            print("Hello, " + username + " thanks for logging in")
+else:
+    print("We need to find some user!")
+
+current_users = usernames
+
+new_users = ["chris", "jeff", "joe", "bob", "billy"]
+
+for user in new_users:
+    if user in current_users:
+        print(user + " this user has already been created. Please enter in a new username")
+    else:
+        print(user + " this username is ready for use!")
+
+ordinal_numbers = [str(num) for num in range(1,10)]
+
+for num in ordinal_numbers:
+    if num == "1":
+        print("\n" + num + "st")
+    elif num =="2":
+        print("\n" + num + "nd")
+    elif num =="3":
+        print("\n" + num + "rd")
+    else:
+        print("\n" + num + "th")
+
