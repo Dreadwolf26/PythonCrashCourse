@@ -24,3 +24,14 @@ def make_shirt(message, size="Large"):
     print("\nThe message: " + message + " will be displayed on the back just like you have specified.")
 
 make_shirt(message="I Love Python")
+
+#8-5
+def describe_city(city, country="Russia"):
+    print(f"The city {city} is in the country of {country}")
+
+describe_city("Moscow")
+describe_city("Saint Petersburg")
+describe_city("Yekaterinburg")
+
+
+    
