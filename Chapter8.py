@@ -67,6 +67,27 @@ while True:
     favorite_band_and_album = make_album(b_name, a_name)
     print(favorite_band_and_album)
 
+#8-9
+magicians = [
+    "David Copperfield",
+    "Houdini",
+    "Penn Jillette",
+    "Teller",
+    "David Blaine",
+    "Dynamo",
+    "Criss Angel",
+    "Siegfried & Roy",
+    "Lance Burton",
+    "Ricky Jay"
+]
 
+def show_magicians():
+    for magician in magicians:
+        print(magician)
+
+show_magicians()
+
+#8-9
+def make_great():
 
     
