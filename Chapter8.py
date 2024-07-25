@@ -68,6 +68,7 @@ while True:
     print(favorite_band_and_album)
 
 #8-9
+# Define a list of famous magicians
 magicians = [
     "David Copperfield",
     "Houdini",
@@ -81,13 +82,77 @@ magicians = [
     "Ricky Jay"
 ]
 
-def show_magicians():
+# Function to print each magician's name from the list
+def show_magicians(magicians):
+    # Loop through each magician in the list and print their name
     for magician in magicians:
         print(magician)
 
-show_magicians()
+# Function to modify a copy of the list of magicians by adding 'the Great' to each name
+def make_great(magicians):
+    # Make a copy of the magicians list using slicing
+    magicians_copy = magicians[:]
+    # Iterate through the copied list using indices
+    for i in range(len(magicians_copy)):
+        # Append ' the Great' to each magician's name and update the copied list
+        magicians_copy[i] = magicians_copy[i] + " the Great"
+    # Return the modified copy of the list
+    return magicians_copy
 
-#8-9
-def make_great():
+# Display the original list of magicians
+print("Original magicians list:")
+show_magicians(magicians)
 
+# Print a newline for better readability
+print("\nModifying magicians list by adding 'the Great' to each name:")
+
+# Get a modified copy of the magicians list by calling make_great function
+great_magicians = make_great(magicians)
+
+# Display the modified copy of the magicians list
+print("\nChanged magicians list:")
+show_magicians(great_magicians)
+
+# Display the original list of magicians to confirm it is unchanged
+print("\nUnchanged magicians list:")
+show_magicians(magicians)
+
+#Using arbitrary number of arguments 
+#This return a tuple when using the * paramters
+def shopping_list(*items):
+    print(items)
+
+shopping_list("Tomatoes", "Garlic", "Basil")
+
+#using a for loop to list out thing better
+def shopping_list(*items):
+    print("\nHere is your grocery list:")
+    for item in items:
+        print("- " + item)
     
+shopping_list("Tomatoes", "Garlic", "Basil") 
+
+#mix of size and positional arguments
+def build_computer(cpu, ram, *components):
+    print("\nHere is a list of your custom build computer specifications: ")
+    print(f"\nYour CPU choice: {cpu}")
+    print(f"\nYour RAM Choice: {ram}")
+    print(f"\nThe components select for this build: ")
+    for component in components:
+        print(f"- {component}")
+
+build_computer("Intel i7", "16GB", "Graphics Card", "SSD", "Cooling System", "Power Supply", "Motherboard")
+
+#practice referencing the book example adding arguments into a dict
+def build_car(make, model, **features):
+    car = {}
+    car["car_make"] = make
+    car["car_model"] = model
+    for key, value in features.items():
+        car[key] = value
+    return car
+
+car = build_car('Tesla', 'Model S', color='red', year=2022, autopilot=True, battery='100 kWh')
+print(car)
+
+
