@@ -1,3 +1,5 @@
+import random
+
 class Dog():
     '''A simple attempt to model a dog'''
 
@@ -133,3 +135,41 @@ cream_1.ice_cream_flavors()
 cream_1.describe_restaurant()
 cream_1.open_restaurant()
 cream_1.ice_cream_flavors()
+
+class Admin(User):
+
+    def __init__(self, first_name,Last_name):
+        super().__init__(first_name, Last_name)
+        self.privileges = Privileges()
+
+
+class Privileges():
+    def __init__(self):
+        self.privileges = ["can post", 
+                           "can delete post", 
+                           "can ban user",
+                           "Can reset user passwords"]
+    
+    def show_privileges(self):
+        print("You are an Admin these are the priveleges you are entitled to:\n")
+        for privilege in self.privileges:
+            print(f"- {privilege}")
+
+
+admin_2 = Admin("Chris", "Holcombe")
+admin_2.describe_user()
+admin_2.greet_user()
+admin_2.privileges.show_privileges()
+
+class Die():
+    def __init__(self, sides):
+        self.sides = sides
+
+    def roll(self):
+        return random.randint(1,self.sides)
+        
+            
+
+die_1 = Die(10)
+result = die_1.roll()
+print(f"Rolled a {result}")
