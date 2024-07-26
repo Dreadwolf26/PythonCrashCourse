@@ -1,0 +1,5 @@
+Line 1: This is the first line of the text file.
+Line 2: Here is the second line, showing more text.
+Line 3: This is the third line of our sample file.
+Line 4: The fourth line continues with more content.
+Line 5: Finally, this is the fifth line of the file.
