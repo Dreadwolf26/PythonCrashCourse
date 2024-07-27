@@ -1,3 +1,2 @@
 Please sign the guest book:
-Test 99
 exit

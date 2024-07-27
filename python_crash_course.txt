@@ -1,0 +1,201 @@
+﻿
+Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License https://products.aspose.com/words/temporary-license/
+PPYYTTHHOONN CCRRAASSHH  CCOOUURRSSEE
+A  H A N D S - O N ,  P R O J E C T - B A S E D
+I N T R O D U C T I O N  T O  P R O G R A M M I N G
+E R I C  M A T T H E S
+PYTHON CRASH COURSE
+
+PYTHON         CRASH COURSE
+A Hands- On, Project-Based Introduction to Programming
+by Eric Matthes
+
+San Francisco
+PYTHON CRASH COURSE. Copyright ' 2016 by Eric Matthes.
+All rights reserved. No part of this work may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, or by any information storage or retrieval system, without the prior written permission of the copyright owner and the publisher.
+First printing
+19 18 17 16 15   1 2 3 4 5 6 7 8 9
+ISBN-10: 1-59327-603-6 ISBN-13: 978-1-59327-603-4
+Publisher: William Pollock
+Production Editor: Riley Hoffman
+Cover Illustration: Josh Ellingson
+Interior Design: Octopod Studios
+Developmental Editors: William Pollock, Liz Chadwick, and Leslie Shen Technical Reviewer: Kenneth Love
+Copyeditor: Anne Marie Walker
+Compositor: Riley Hoffman
+Proofreader: James Fraleigh
+For information on distribution, translations, or bulk sales, please contact No Starch Press, Inc. directly:
+No Starch Press, Inc.
+245 8th Street, San Francisco, CA 94103 phone: 415.863.9900; info@nostarch.com www.nostarch.com
+Library of Congress Cataloging-in-Publication Data
+Matthes, Eric, 1972-
+  Python crash course : a hands-on, project-based introduction to programming / by Eric Matthes.
+       pages cm
+  Includes index.
+  Summary: "A project-based introduction to programming in Python, with exercises. Covers general programming concepts, Python fundamentals, and problem solving. Includes three projects - how to create a simple video game, use data visualization techniques to make graphs and charts, and build an interactive web application"-- Provided by publisher.
+  ISBN 978-1-59327-603-4 -- ISBN 1-59327-603-6 1.  Python (Computer program language)  I. Title.   QA76.73.P98M38 2015
+  005.13’3--dc23
+                                                            2015018135
+No Starch Press and the No Starch Press logo are registered trademarks of No Starch Press, Inc. Other product and company names mentioned herein may be the trademarks of their respective owners. Rather than use a trademark symbol with every occurrence of a trademarked name, we are using the names only in an editorial fashion and to the benefit of the trademark owner, with no intention of infringement of the trademark.
+The information in this book is distributed on an  As Is  basis, without warranty. While every precaution has been taken in the preparation of this work, neither the author nor No Starch Press, Inc. shall have any liability to any person or entity with respect to any loss or damage caused or alleged to be caused directly or indirectly by the information contained in it.
+About the Author
+Eric Matthes is a high school science and math teacher living in Alaska, 
+where he teaches an introductory Python course. He has been writing programs since he was five years old. Eric currently focuses on writing soft - ware that addresses inefficiencies in education and brings the benefits of 
+open source software to the field of education. In his spare time he enjoys climbing mountains and spending time with his family.
+About the Technical Reviewer
+Kenneth Love has been a Python programmer and teacher for many years. He has given talks and tutorials at conferences, done professional train - ings, been a Python and Django freelancer, and now teaches for an online education company. Kenneth is also the co-creator of the django-braces package, which provides several handy mixins for Django s class-based views. You can keep up with him on Twitter at @kennethlove.
+
+For my father, who always made time to    answer my questions about programming,  and for Ever, who is just beginning to ask me his questions
+
+BR IEF CONTENTS
+Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xxvii Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xxix
+PART I: BASICS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+Chapter 1: Getting Started . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 Chapter 2: Variables and Simple Data Types  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 Chapter 3: Introducing Lists . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37 Chapter 4: Working with Lists . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+Chapter 5: if Statements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75 Chapter 6: Dictionaries. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 95 Chapter 7: User Input and while Loops . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 117 Chapter 8: Functions  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 133 Chapter 9: Classes. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 161 Chapter 10: Files and Exceptions. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 189 Chapter 11: Testing Your Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 215
+PART II: PROJECTS  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 231
+Project 1: Alien Invasion
+Chapter 12: A Ship That Fires Bullets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 235 Chapter 13: Aliens! . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 265 Chapter 14: Scoring  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 291
+Project 2: Data Visualization
+Chapter 15: Generating Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 321 Chapter 16: Downloading Data. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 349 Chapter 17: Working with APIs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 377
+Project 3: Web Applications
+Chapter 18: Getting Started with Django . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 397 Chapter 19: User Accounts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 427 Chapter 20: Styling and Deploying an App  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 455
+Afterword . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 483
+Appendix A: Installing Python . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 485 Appendix B: Text Editors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 491 Appendix C: Getting Help  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 499 Appendix D: Using Git for Version Control . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 505
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 515
+x Brief Contents
+
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.
+
+CONTENTS IN DETAIL
+ACKNOWLEDGMENTS  xxvii INTRODUCTION  xxix
+Who Is This Book For? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xxx What Can You Expect to Learn?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xxx Why Python? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .xxxi
+PART I: BASICS  1
+1 
+GETTING STARTED  3
+Setting Up Your Programming Environment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+Python 2 and Python 3. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Running Snippets of Python Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Hello World! . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 Python on Different Operating Systems   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Python on Linux. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Python on OS X  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+Python on Windows . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10 Troubleshooting Installation Issues  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 Running Python Programs from a Terminal. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+On Linux and OS X . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+On Windows . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+Exercise 1-1: python.org . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Exercise 1-2: Hello World Typos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Exercise 1-3: Infinite Skills . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 Summary  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+2 
+VARIABLES AND SIMPLE DATA TYPES  19
+What Really Happens When You Run hello_world.py. . . . . . . . . . . . . . . . . . . . . . . . . 19 Variables  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+Naming and Using Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21 Avoiding Name Errors When Using Variables . . . . . . . . . . . . . . . . . . . . . . . 21
+Exercise 2-1: Simple Message  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23 Exercise 2-2: Simple Messages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+Strings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23 Changing Case in a String with Methods . . . . . . . . . . . . . . . . . . . . . . . . . . . 24 Combining or Concatenating Strings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+Adding Whitespace to Strings with Tabs or Newlines . . . . . . . . . . . . . . . . . . 26 Stripping Whitespace . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 Avoiding Syntax Errors with Strings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28 Printing in Python 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 Exercise 2-3: Personal Message . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 Exercise 2-4: Name Cases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 Exercise 2-5: Famous Quote . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.
+
+Exercise 2-6: Famous Quote 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 Exercise 2-7: Stripping Names . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 Numbers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30 Integers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+Floats  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30 Avoiding Type Errors with the str() Function  . . . . . . . . . . . . . . . . . . . . . . . . . 31
+Integers in Python 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32 Exercise 2-8: Number Eight . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+Exercise 2-9: Favorite Number . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 Comments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 How Do You Write Comments?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+What Kind of Comments Should You Write?  . . . . . . . . . . . . . . . . . . . . . . . . 33 Exercise 2-10: Adding Comments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+The Zen of Python  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34 Exercise 2-11: Zen of Python  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36 Summary  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+3 
+INTRODUCING LISTS  37
+What Is a List? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+Accessing Elements in a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+Index Positions Start at 0, Not 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  39
+Using Individual Values from a List  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+Exercise 3-1: Names . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+Exercise 3-2: Greetings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+Exercise 3-3: Your Own List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40 Changing, Adding, and Removing Elements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+Modifying Elements in a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+Adding Elements to a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+Removing Elements from a List  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+Exercise 3-4: Guest List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+Exercise 3-5: Changing Guest List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+Exercise 3-6: More Guests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+Exercise 3-7: Shrinking Guest List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47 Organizing a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+Sorting a List Permanently with the sort() Method . . . . . . . . . . . . . . . . . . . . . . 47
+Sorting a List Temporarily with the sorted() Function. . . . . . . . . . . . . . . . . . . . 48
+Printing a List in Reverse Order . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+Finding the Length of a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+Exercise 3-8: Seeing the World. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+Exercise 3-9: Dinner Guests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+Exercise 3-10: Every Function . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50 Avoiding Index Errors When Working with Lists. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+Exercise 3-11: Intentional Error . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52 Summary  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+4 
+WORKING WITH LISTS  53
+Looping Through an Entire List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+A Closer Look at Looping . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 54 Doing More Work Within a for Loop. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55 Doing Something After a for Loop . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.
+xii Contents in Detail
+
+Avoiding Indentation Errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+Forgetting to Indent . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+Forgetting to Indent Additional Lines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+Indenting Unnecessarily . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+Indenting Unnecessarily After the Loop. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+Forgetting the Colon . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
+Exercise 4-1: Pizzas  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
+Exercise 4-2: Animals  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60 Making Numerical Lists. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+Using the range() Function . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+Using range() to Make a List of Numbers . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
+Simple Statistics with a List of Numbers . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+List Comprehensions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+Exercise 4-3: Counting to Twenty  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+Exercise 4-4: One Million. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+Exercise 4-5: Summing a Million . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+Exercise 4-6: Odd Numbers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+Exercise 4-7: Threes  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+Exercise 4-8: Cubes. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+Exercise 4-9: Cube Comprehension. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64 Working with Part of a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+Slicing a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+Looping Through a Slice  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 66
+Copying a List  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+Exercise 4-10: Slices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69
+Exercise 4-11: My Pizzas, Your Pizzas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69
+Exercise 4-12: More Loops. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69 Tuples. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69
+Defining a Tuple . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69
+Looping Through All Values in a Tuple . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 70
+Writing over a Tuple . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71
+Exercise 4-13: Buffet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71 Styling Your Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 72
+The Style Guide  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 72
+Indentation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 72
+Line Length. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 73
+Blank Lines. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 73
+Other Style Guidelines. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 73
+Exercise 4-14: PEP 8 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74
+Exercise 4-15: Code Review. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74 Summary  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74
+5 
+IF STATEMENTS  75
+A Simple Example . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 76 Conditional Tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 76 Checking for Equality  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 76
+Ignoring Case When Checking for Equality . . . . . . . . . . . . . . . . . . . . . . . . . 77 Checking for Inequality . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 78 Numerical Comparisons  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 78 Checking Multiple Conditions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 79 Checking Whether a Value Is in a List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.
+
+Checking Whether a Value Is Not in a List . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+Boolean Expressions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+Exercise 5-1: Conditional Tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82
+Exercise 5-2: More Conditional Tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82 if Statements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82
+Simple if Statements  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82
+if-else Statements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 83
+The if-elif-else Chain  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 84
+Using Multiple elif Blocks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
+Omitting the else Block  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
+Testing Multiple Conditions. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 87
+Exercise 5-3: Alien Colors #1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88
+Exercise 5-4: Alien Colors #2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88
+Exercise 5-5: Alien Colors #3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+Exercise 5-6: Stages of Life. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+Exercise 5-7: Favorite Fruit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89 Using if Statements with Lists . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+Checking for Special Items . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 90
+Checking That a List Is Not Empty . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  91
+Using Multiple Lists . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 92
+Exercise 5-8: Hello Admin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93
+Exercise 5-9: No Users  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93
+Exercise 5-10: Checking Usernames . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93
+This document was truncated here because it was created in the Evaluation Mode.
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.
+xiv Contents in Detail
