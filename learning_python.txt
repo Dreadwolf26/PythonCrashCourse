@@ -1,0 +1,5 @@
+In Python, you can define variables and assign values using straightforward syntax.
+In Python, you can use if-else statements to control the flow of your program based on conditions.
+In Python, you can create and manipulate lists, which are versatile data structures for storing collections of items.
+In Python, you can define functions to encapsulate reusable blocks of code.
+In Python, you can import modules to extend the functionality of your programs beyond built-in capabilities.
