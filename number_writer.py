@@ -11,5 +11,5 @@ with open(filename, "w") as file_object:
 #reading json file
 with open(filename) as file_object:
     numbers = json.load(file_object)
-
+#printing the file
 print(numbers)
