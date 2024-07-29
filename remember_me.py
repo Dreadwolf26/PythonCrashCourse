@@ -1,16 +1,21 @@
-import json 
+import json
+import os
 
 filename = "users.json"
 
-def get_stored_username():
-    '''Attempt to retrieve the username from the file.'''
+#if filename does not exist create it with an empty string
+if not os.path.exists(filename):
+    with open (filename, "w") as file_object:
+        json.dump([],file_object)
+
+def get_stored_usernames():
+    '''Attempt to retrieve the list of usernames from the file.'''
     try:
         with open(filename) as file_object:
-            username = json.load(file_object)
-            return username
+            usernames = json.load(file_object)
+            return usernames
     except FileNotFoundError:
-        print(f"Filename: {filename} does not exist. Please check again.")
-        return None  # Ensure to return None if the file is not found
+        return []  # Return an empty list if the file is not found
 
 def display_greeting():
     '''Greet the user after retrieving or storing the username.'''
@@ -21,13 +26,26 @@ def display_greeting():
         username = get_new_username()
         print(f"We will remember you when you come back, {username}!")
 
+def get_stored_username():
+    '''Retrieve the username if it exists in the file.'''
+    usernames = get_stored_usernames()
+    if usernames:
+        return usernames[-1]
+    return None
+
 def get_new_username():
     '''Prompt the user to input a new username and store it in the file.'''
+    usernames = get_stored_usernames()  # Read existing usernames
     username = input("What is your name?: ")
+    usernames.append(username)  # Append the new username
     with open(filename, 'w') as file_object:
-        json.dump(username, file_object)
+        json.dump(usernames, file_object)  # Write the updated list back to the file
     return username
 
 # Calling the function to ensure they work as expected
 if __name__ == "__main__":
-    display_greeting()
+    user_check = input("Please enter your username to login: ")
+    if user_check in get_stored_usernames():
+        display_greeting()
+    else:
+        get_new_username() 

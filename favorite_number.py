@@ -37,11 +37,15 @@ def guess_number():
 
 
 def get_number():
-    number = save_number()
-    if number:
-        return number
-    else:
-        number = guess_number()
-        return number
+    try:
+        with open(filename) as file_object:
+            favorite_num = json.load(file_object)
+            if favorite_num:
+                guess_number()
+    except FileNotFoundError:
+        save_number()
+    except Exception as e:
+        print(f"Exception {e} was thrown. What does it mean? To Google!")
+
 
 get_number()
